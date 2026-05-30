@@ -26,6 +26,18 @@ export default async function AdminDashboard() {
 
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-black text-gray-900">Products Management</h1>
+          <form action={async () => {
+            'use server'
+            const { cookies } = await import('next/headers')
+            const cookieStore = await cookies()
+            cookieStore.delete('admin_auth')
+            const { redirect } = await import('next/navigation')
+            redirect('/login')
+          }}>
+            <button className="bg-white border border-gray-200 text-gray-700 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition-colors flex items-center gap-2 shadow-sm">
+              Logout
+            </button>
+          </form>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
