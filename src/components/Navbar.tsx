@@ -18,7 +18,6 @@ export default function Navbar() {
             <Link href="/products" className="text-sm font-semibold text-gray-600 hover:text-blue-600 transition-colors">Equipment</Link>
             <Link href="/about" className="text-sm font-semibold text-gray-600 hover:text-blue-600 transition-colors">About Us</Link>
             <Link href="/contact" className="text-sm font-semibold text-gray-600 hover:text-blue-600 transition-colors">Contact</Link>
-            <Link href="/admin" className="text-sm font-semibold px-3 py-1.5 bg-gray-100 rounded-full text-gray-700 hover:bg-gray-200 transition-colors">Admin Dashboard</Link>
           </div>
 
           <div className="flex items-center space-x-5">
