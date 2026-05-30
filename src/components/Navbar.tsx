@@ -16,8 +16,8 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/50 rounded-full p-2">
-                <Image src="/logo.jpg" alt="EgyptFlower Logo" fill className="object-contain hover:scale-105 transition-transform drop-shadow-sm" />
+              <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white rounded-full overflow-hidden shadow-sm border border-gray-100">
+                <Image src="/logo.jpg" alt="EgyptFlower Logo" fill className="object-contain p-1 hover:scale-105 transition-transform" />
               </div>
               <span className="hidden lg:block text-2xl font-black bg-gradient-to-r from-blue-700 to-cyan-500 bg-clip-text text-transparent tracking-tighter">
                 Egypt<span className="text-gray-900">Flower</span>
