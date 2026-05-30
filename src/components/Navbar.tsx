@@ -25,6 +25,7 @@ export default function Navbar() {
             <Link href="/" className="text-sm font-semibold text-gray-600 hover:text-blue-600 transition-colors">Home</Link>
             <Link href="/products" className="text-sm font-semibold text-gray-600 hover:text-blue-600 transition-colors">Shop</Link>
             <Link href="/about" className="text-sm font-semibold text-gray-600 hover:text-blue-600 transition-colors">About Us</Link>
+            <Link href="/contact" className="text-sm font-semibold text-gray-600 hover:text-blue-600 transition-colors">Contact</Link>
           </div>
 
           <div className="flex items-center space-x-5">
@@ -74,6 +75,13 @@ export default function Navbar() {
             className="text-base font-semibold text-gray-700 hover:text-blue-600 px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
           >
             About Us
+          </Link>
+          <Link 
+            href="/contact" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-base font-semibold text-gray-700 hover:text-blue-600 px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
+          >
+            Contact
           </Link>
         </div>
       </div>
