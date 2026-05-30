@@ -5,7 +5,7 @@ import { ShoppingCart, Search, Menu } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
 
 export default function Navbar() {
-  const { cartCount } = useCart()
+  const { cartCount, setIsCartOpen } = useCart()
   
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
@@ -29,14 +29,14 @@ export default function Navbar() {
             <button className="text-gray-600 hover:text-blue-600 transition-colors">
               <Search className="w-5 h-5" />
             </button>
-            <Link href="/cart" className="relative text-gray-600 hover:text-blue-600 transition-colors">
-              <ShoppingCart className="w-5 h-5" />
+            <button onClick={() => setIsCartOpen(true)} className="relative text-gray-600 hover:text-blue-600 transition-colors p-1">
+              <ShoppingCart className="w-6 h-6" />
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+                <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white">
                   {cartCount}
                 </span>
               )}
-            </Link>
+            </button>
             <button className="md:hidden text-gray-600">
               <Menu className="w-6 h-6" />
             </button>
