@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ShoppingCart } from 'lucide-react'
 import { PrismaClient } from '@prisma/client'
+import AddToCartButton from '@/components/AddToCartButton'
 
 const prisma = new PrismaClient()
 
@@ -55,9 +56,7 @@ export default async function ProductsPage() {
                     <span className="text-2xl font-black text-blue-600">
                       ${product.price.toLocaleString(undefined, { minimumFractionDigits: 2 })}
                     </span>
-                    <button className="w-10 h-10 bg-slate-900 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors shadow-md">
-                      <ShoppingCart className="w-4 h-4" />
-                    </button>
+                    <AddToCartButton product={product} />
                   </div>
                 </div>
               </div>
