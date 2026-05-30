@@ -78,7 +78,7 @@ export default function CartDrawer() {
                       <h3 className="font-bold text-sm text-gray-900 line-clamp-2 pr-6">{item.name}</h3>
                       <button 
                         onClick={() => removeFromCart(item.id)}
-                        className="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors p-1 bg-white rounded-full shadow-sm opacity-0 group-hover:opacity-100"
+                        className="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors p-2 bg-white rounded-full shadow-sm"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
