@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { ShoppingCart, Search, Menu, X } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
 import { useState } from 'react'
@@ -14,8 +15,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="text-3xl font-black bg-gradient-to-r from-blue-700 to-cyan-500 bg-clip-text text-transparent tracking-tighter">
+            <Link href="/" className="flex items-center gap-3">
+              <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/50 rounded-full p-2">
+                <Image src="/logo.jpg" alt="EgyptFlower Logo" fill className="object-contain hover:scale-105 transition-transform drop-shadow-sm" />
+              </div>
+              <span className="hidden lg:block text-2xl font-black bg-gradient-to-r from-blue-700 to-cyan-500 bg-clip-text text-transparent tracking-tighter">
                 Egypt<span className="text-gray-900">Flower</span>
               </span>
             </Link>

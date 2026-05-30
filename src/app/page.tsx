@@ -12,7 +12,10 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop")' }}
         />
-        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
+        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto flex flex-col items-center">
+          <div className="relative w-40 h-40 md:w-56 md:h-56 mb-8 bg-white backdrop-blur-sm rounded-full shadow-2xl border-4 border-white/20 flex items-center justify-center overflow-hidden">
+            <Image src="/logo.jpg" alt="EgyptFlower Logo" fill className="object-contain p-2 md:p-4 hover:scale-105 transition-transform" />
+          </div>
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight leading-tight drop-shadow-lg">
             Premium <span className="text-blue-500">Petroleum</span> Extraction Equipment
           </h1>
