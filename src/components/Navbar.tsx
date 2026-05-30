@@ -22,6 +22,7 @@ export default function Navbar() {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
+            <Link href="/" className="text-sm font-semibold text-gray-600 hover:text-blue-600 transition-colors">Home</Link>
             <Link href="/products" className="text-sm font-semibold text-gray-600 hover:text-blue-600 transition-colors">Shop</Link>
             <Link href="/about" className="text-sm font-semibold text-gray-600 hover:text-blue-600 transition-colors">About Us</Link>
           </div>
@@ -53,6 +54,13 @@ export default function Navbar() {
         className={`md:hidden absolute w-full bg-white border-t border-gray-100 shadow-lg transition-all duration-300 ease-in-out origin-top ${isMobileMenuOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 pointer-events-none'}`}
       >
         <div className="px-4 pt-2 pb-6 flex flex-col space-y-2">
+          <Link 
+            href="/" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-base font-semibold text-gray-700 hover:text-blue-600 px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
+          >
+            Home
+          </Link>
           <Link 
             href="/products" 
             onClick={() => setIsMobileMenuOpen(false)}
