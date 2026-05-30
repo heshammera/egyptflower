@@ -1,11 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { ShoppingCart, Search, Menu } from 'lucide-react'
+import { ShoppingCart, Search, Menu, X } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
+import { useState } from 'react'
 
 export default function Navbar() {
   const { cartCount, setIsCartOpen } = useCart()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
@@ -37,10 +39,42 @@ export default function Navbar() {
                 </span>
               )}
             </button>
-            <button className="md:hidden text-gray-600">
-              <Menu className="w-6 h-6" />
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+              className="md:hidden text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div 
+        className={`md:hidden absolute w-full bg-white border-t border-gray-100 shadow-lg transition-all duration-300 ease-in-out origin-top ${isMobileMenuOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0 pointer-events-none'}`}
+      >
+        <div className="px-4 pt-2 pb-6 flex flex-col space-y-2">
+          <Link 
+            href="/products" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-base font-semibold text-gray-700 hover:text-blue-600 px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
+          >
+            Equipment
+          </Link>
+          <Link 
+            href="/about" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-base font-semibold text-gray-700 hover:text-blue-600 px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
+          >
+            About Us
+          </Link>
+          <Link 
+            href="/contact" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-base font-semibold text-gray-700 hover:text-blue-600 px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
+          >
+            Contact
+          </Link>
         </div>
       </div>
     </nav>
