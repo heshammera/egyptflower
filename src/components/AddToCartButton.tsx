@@ -3,8 +3,19 @@
 import { useCart } from '@/context/CartContext'
 import { ShoppingCart } from 'lucide-react'
 
-export default function AddToCartButton({ product }: { product: any }) {
+export default function AddToCartButton({ product, isLarge = false }: { product: any, isLarge?: boolean }) {
   const { addToCart } = useCart()
+
+  if (isLarge) {
+    return (
+      <button 
+        onClick={() => addToCart(product)}
+        className="w-full bg-blue-600 text-white font-bold py-4 px-8 rounded-full flex items-center justify-center gap-3 hover:bg-blue-700 transition-colors shadow-lg hover:-translate-y-0.5 text-lg"
+      >
+        <ShoppingCart className="w-6 h-6" /> Add to Cart
+      </button>
+    )
+  }
 
   return (
     <button 

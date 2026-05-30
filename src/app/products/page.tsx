@@ -32,7 +32,7 @@ export default async function ProductsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {products.map((product) => (
               <div key={product.id} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col border border-gray-100">
-                <div className="relative h-64 bg-gray-100 overflow-hidden">
+                <Link href={`/products/${product.id}`} className="relative h-64 bg-gray-100 overflow-hidden block">
                   <Image 
                     src={product.imageUrl || 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=600&auto=format&fit=crop'} 
                     alt={product.name}
@@ -44,11 +44,13 @@ export default async function ProductsPage() {
                       {product.category}
                     </div>
                   )}
-                </div>
+                </Link>
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 leading-tight">
-                    {product.name}
-                  </h3>
+                  <Link href={`/products/${product.id}`} className="hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 leading-tight">
+                      {product.name}
+                    </h3>
+                  </Link>
                   <p className="text-sm text-gray-500 mb-4 line-clamp-3 flex-grow">
                     {product.description}
                   </p>
