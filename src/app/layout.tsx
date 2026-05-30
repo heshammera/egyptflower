@@ -8,8 +8,8 @@ import CartDrawer from "@/components/CartDrawer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PetroGear | Global Petroleum Equipment",
-  description: "Buy and sell professional petroleum extraction equipment globally.",
+  title: "EgyptFlower | Premium Equipment",
+  description: "EgyptFlower - Your trusted supplier for premium equipment and machinery.",
 };
 
 export default function RootLayout({
